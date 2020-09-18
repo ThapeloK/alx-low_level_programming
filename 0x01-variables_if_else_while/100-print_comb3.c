@@ -7,24 +7,24 @@
  */
 int main(void)
 {
-	int i;
-	int k = '0';
-	int j;
+	int first;
+	int test = '0';
+	int last;
 
-	for (i = '0'; i <= '9'; i++)
+	for (first = '0'; first <= '9'; first++)
 	{
-		for (j = k; j <= '9'; j++)
+		for (last = test; last <= '9'; last++)
 		{
-			if (i != j)
+			if (first != last)
 			{
-				putchar(i);
-				putchar(j);
+				putchar(first);
+				putchar(last);
 			}
-			if (i == j)
+			if (first == last)
 			{
 				continue;
 			}
-			if (i == '8' && j == '9')
+			if (first == '8' && last == '9')
 			{
 				break;
 			}
@@ -34,7 +34,7 @@ int main(void)
 				putchar(' ');
 			}
 		}
-		k++;
+		test++;
 	}
 	putchar('\n');
 	return (0);
