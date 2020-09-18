@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
- *main - Print last digit of stored values
+ * main - Print last digit of stored values
  *
- *Return: 0 at the end (Success)
+ * Return: 0 at the end (Success)
  */
 int main(void)
 {
