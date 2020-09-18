@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
 
 /**
- * main - Print last digit of stored values
+ * main - Printing last digit of stored value
  *
  * Return: 0 at the end (Success)
  */
