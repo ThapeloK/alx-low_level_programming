@@ -2,31 +2,31 @@
 
 /**
  *main - Print the smaller number of the combination
- * digit1: first digit displayed
- * digit2: second digit displayed
- * digit_tester: digit that will eliminate the smaller digits
- *Return:0-success, Non-zero, fail.
+ * i: first digit displayed
+ * j: second digit displayed
+ * k: digit for testing
+ *Return:0 at the end (Success).
  */
 int main(void)
 {
-	int digit1;
-	int digit_tester = '0';
-	int digit2;
+	int i;
+	int k = '0';
+	int j;
 
-	for (digit1 = '0'; digit1 <= '9'; digit1++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		for (digit2 = digit_tester; digit2 <= '9'; digit2++)
+		for (j = k; j <= '9'; j++)
 		{
-			if (digit1 != digit2)
+			if (i != j)
 			{
-				putchar(digit1);
-				putchar(digit2);
+				putchar(i);
+				putchar(j);
 			}
-			if (digit1 == digit2)
+			if (i == j)
 			{
 				continue;
 			}
-			if (digit1 == '8' && digit2 == '9')
+			if (i == '8' && j == '9')
 			{
 				break;
 			}
@@ -36,7 +36,7 @@ int main(void)
 				putchar(' ');
 			}
 		}
-		digit_tester++;
+		k++;
 	}
 	putchar('\n');
 	return (0);
