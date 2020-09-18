@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible different combinations of two digits
+ *main - prints all possible different combinations of two digits
  * 
- * Return: 0
+ *Return:0 at the end (Success)
  */
 int main(void)
 {
 	int i;
-	int j;
 	int k = '0';
+	int j;
 
 	for (i = '0'; i <= '9'; i++)
 	{
@@ -24,7 +24,6 @@ int main(void)
 			{
 				continue;
 			}
-
 			if (i == '8' && j == '9')
 			{
 				break;
