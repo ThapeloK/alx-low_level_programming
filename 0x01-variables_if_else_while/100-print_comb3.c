@@ -1,19 +1,21 @@
 #include <stdio.h>
 
 /**
- *main - prints all possible different combinations of two digits
- * 
- *Return:0 at the end (Success)
+ *main - Print the smaller number of the combination
+ * digit1: first digit displayed
+ * digit2: second digit displayed
+ * digit_tester: digit that will eliminate the smaller digits
+ *Return:0-success, Non-zero, fail.
  */
 int main(void)
 {
 	int digit1;
-	int digit = '0';
+	int digit_tester = '0';
 	int digit2;
 
 	for (digit1 = '0'; digit1 <= '9'; digit1++)
 	{
-		for (digit2 = digit; digit2 <= '9'; digit2++)
+		for (digit2 = digit_tester; digit2 <= '9'; digit2++)
 		{
 			if (digit1 != digit2)
 			{
@@ -34,7 +36,7 @@ int main(void)
 				putchar(' ');
 			}
 		}
-		digit++;
+		digit_tester++;
 	}
 	putchar('\n');
 	return (0);
