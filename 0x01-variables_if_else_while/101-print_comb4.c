@@ -7,23 +7,22 @@
  */
 int main(void)
 {
-	int first;
-	int second;
+	int i, j, k, l;
 
-	for (first= 0; first <= 9; first++)
+	for (i = 0; i < 1000; i++)
 	{
-		for (second = 0; second <= 9; second++)
+		j = i / 100;
+		k = (i / 10) % 10;
+		l = i % 10;
+		if (j < k && k < l)
 		{
-			putchar(first + '0');
-			putchar(second + '0');
-			if (first == 9 && second == 9)
+			putchar(j + '0');
+			putchar(k + '0');
+			putchar(l + '0');
+			if (i < 700)
 			{
-				break;
-			}
-			else
-			{
-				putchar(',');
-				putchar(' ');
+				putchar(44);
+				putchar(32);
 			}
 		}
 	}
