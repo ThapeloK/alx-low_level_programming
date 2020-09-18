@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - Printing last digit of stored value
+ * main - Last digit of stored value entry point
  *
  * Return: 0 at the end (Success)
  */
