@@ -7,16 +7,16 @@
  */
 int main(void)
 {
-	int i;
-	int j;
+	int first;
+	int second;
 
-	for (i = 0; i <= 9; i++)
+	for (first= 0; first <= 9; first++)
 	{
-		for (j = 0; j <= 9; j++)
+		for (second = 0; second <= 9; second++)
 		{
-			putchar(i + '0');
-			putchar(j + '0');
-			if (i == 9 && j == 9)
+			putchar(first + '0');
+			putchar(second + '0');
+			if (first == 9 && second == 9)
 			{
 				break;
 			}
