@@ -7,11 +7,11 @@
 int main(void)
 {
 	int i, j;
-	int k = 0;
+	int k = '0';
 
-	for (i = 0; i < 10; i++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		for (j = k; j < 10; j++)
+		for (j = k; j <= '9'; j++)
 		{
 			if (i !=j)
 			{
@@ -23,7 +23,7 @@ int main(void)
 				continue;
 			}
 
-			if (i == 8 && j == 9)
+			if (i == '8' && j == '9')
 			{
 				break;
 			}
