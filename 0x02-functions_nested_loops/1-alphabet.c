@@ -1,10 +1,9 @@
 #include "holberton.h"
 
 /**
- * print_alphabet - Entry point
+ * print_alphabet - prints lower alphabetical from a to z
  *
- * Description: prints lower alpabectical letter in order 
- * Return: Always 0
+ * Return: Void.
  */
 void print_alphabet(void)
 {
