@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * print_alphabet - Entry point
  *
  * Description: prints lower alpabectical letter in order 
  * Return: Always 0
