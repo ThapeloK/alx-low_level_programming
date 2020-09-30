@@ -6,12 +6,11 @@
  *
  * Return: void
  */
-void puts2(char *str)
+int main(void)
 {
-	int c;
+	char *str;
 
-	for (c = 0; str[c] != 0; c++)
-		if (c % 2 == 0)
-			_putchar(str[c]);
-	_putchar('\n');
+	str = "0123456789";
+	puts2(str);
+	return (0);
 }
