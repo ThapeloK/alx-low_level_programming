@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _strcmp - comparing equality of two strings
+ * _strcmp - compare two strings if equal
  * @s1: the first strang
  * @s2: the second strang
  *
