@@ -2,30 +2,24 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenaste two strings
- * @s1: the first string
- * @s2: the second string
+ * _strdup - duplicates a string
+ * @str: the string to duplicate
  *
- * Return: pointer to the concatenated string
+ * Return: pointer to the duplicated string
  */
-char *str_concat(char *s1, char *s2)
+char *_strdup(char *str)
 {
 	char *pstr;
-	unsigned int len1 = 0, len2 = 0, i, j;
+	unsigned int i = 0;
 
-	if (s1 == 0)
-		s1 = "";
-	if (s2 == 0)
-		s2 = "";
-	while (s1[len1] != 0)
-		len1++;
-	while (s2[len2] != 0)
-		len2++;
-	len2++;
-	pstr = malloc(sizeof(char) * (len1 + len2));
-	for (i = 0; i < len1; i++)
-		pstr[i] = s1[i];
-	for (j = 0; j < len2; i++, j++)
-		pstr[i] = s2[j];
+	if (str == 0)
+		return (0);
+	while (str[i] != 0)
+		i++;
+	i++;
+	pstr = malloc(sizeof(char) * i);
+	for (i = 0; str[i] != 0; i++)
+		pstr[i] = str[i];
+	pstr[i] = 0;
 	return (pstr);
 }
