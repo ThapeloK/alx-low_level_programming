@@ -1,85 +1,98 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-
+#include "holberton.h"
 /**
- * copychars - copies chars to buffer
- * @b: destination buffer
- * @start: starting char pointer
- * @stop: ending char pointer
+ * strncat_mod - concatenates string with n bytes from another string
+ * @dest: destination string
+ * @src: source string
+ * @i: index of beginning char from source string to copy
+ * @str_len: string length
+ * Return: next index to check of source string
  */
-void copychars(char *b, char *start, char *stop)
+int strncat_mod(char *dest, char *src, int i, int str_len)
 {
-	while (start <= stop)
-		*b++ = *start++;
-	*b = 0;
+	int j;
+
+	for (j = 0; src[i] != ' ' && i < str_len; i++, j++)
+		dest[j] = src[i];
+	return (i);
 }
-
 /**
- * wordcount - counts the number of words
- * @str: the sentence string
- *
- * Return: int number of words
+ * mallocmem - allocates memory for output array and sets NULL at string end
+ * @newstr: new string
+ * @str: input string
+ * @str_len: string length
+ * Return: void
  */
-int wordcount(char *str)
+void mallocmem(char **newstr, char *str, int str_len)
 {
-	int words = 0, in_word = 0;
+	int i = 0, j = 0, word_len = 1;
 
-	while (1)
+	while (i < str_len)
 	{
-		if (*str == ' ' || !*str)
+		if (str[i] != ' ')
 		{
-			if (in_word)
-				words++;
-			in_word = 0;
-			if (!*str)
-				break;
+			while (str[i] != ' ' && i < str_len)
+				i++, word_len++;
+			newstr[j] = malloc(sizeof(char) * word_len);
+			newstr[j][word_len] = '\0';
+			j++, word_len = 1;
 		}
-		else
-			in_word++;
-		str++;
+		i++;
 	}
+}
+/**
+ * word_count - counts words in input string
+ * @str: input string
+ * @str_len: string length
+ * Return: 0 on failure, words on success
+ */
+int word_count(char *str, int str_len)
+{
+	int i = 0, words = 0;
+
+	while (i < str_len)
+	{
+		if (str[i] != ' ')
+		{
+			while (str[i] != ' ' && i < str_len)
+				i++;
+			words++;
+		}
+		i++;
+	}
+	if (words == 0)
+		return (0);
 	return (words);
 }
-
 /**
- * strtow - splits sentence into words
- * @str: the sentence string
- *
- * Return: pointer to string array
+ * strtow - splits a string into words
+ * @str: input string to split
+ * Return: pointer to new string
  */
 char **strtow(char *str)
 {
-	int words = 0, in_word = 0;
-	char **ret, *word_start;
+	char **newstr;
+	int i = 0, j = 0, str_len = 0, words;
 
-	if (!str || !*str || !wordcount(str))
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	ret = malloc(sizeof(char *) * (wordcount(str) + 1));
-	while (1)
+	while (*(str + str_len) != '\0')
+		str_len++;
+	words = word_count(str, str_len);
+	if (!words)
+		return (NULL);
+	newstr = malloc((words + 1) * sizeof(char *));
+	mallocmem(newstr, str, str_len);
+	while (i < str_len)
 	{
-		if (*str == ' ' || !*str)
+		if (str[i] != ' ')
 		{
-			if (in_word)
-			{
-				ret[words] = malloc(sizeof(char) * (in_word + 1));
-				if (!ret[words])
-				{
-					return (NULL);
-				}
-				copychars(ret[words], word_start, str - 1);
-				words++;
-				in_word = 0;
-			}
-			if (!*str)
-				break;
+			i = strncat_mod(newstr[j], str, i, str_len);
+			j++, i--;
 		}
-		else
-		{
-			if (!in_word++)
-				word_start = str;
-		}
-		str++;
+		i++;
 	}
-	ret[words] = 0;
-	return (ret);
+	newstr[words + 1] = NULL;
+	return (newstr);
 }
