@@ -1,11 +1,10 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-
+#include "holberton.h"
 /**
- * _strdup - duplicates a string
- * @str: the string to duplicate
- *
- * Return: pointer to the duplicated string
+ * _strdup - copies input string in newly allocated memory
+ * @str: input string
+ * Return: pointer to duplicate string or NULL if failure
  */
 char *_strdup(char *str)
 {
