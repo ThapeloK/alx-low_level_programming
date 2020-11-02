@@ -1,9 +1,9 @@
-#include "lists.h"
+#include <stdio.h>
+void p_before_main(void) __attribute__ ((constructor));
 /**
- * before_main - function executed before main()
- * Return: void
+ * p_before_main - prints before main function
  */
-void before_main(void)
+void p_before_main(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
