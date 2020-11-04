@@ -1,9 +1,8 @@
 #include "lists.h"
-
 /**
- * sum_listint - calculates sum of all data in a given linked list
- * @head: a pointer to the first element of the list
- * Return: sum of values 
+ * sum_listint - returns sum of all data(n)
+ * @head: head of linked list
+ * Return: sum of all numbers in n element of struct of linked list
  */
 int sum_listint(listint_t *head)
 {
