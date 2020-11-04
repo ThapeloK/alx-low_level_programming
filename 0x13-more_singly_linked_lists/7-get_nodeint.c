@@ -5,13 +5,15 @@
  * @index: index of the node to be returned
  * Return: the nth node
  */
-size_t listint_len(const listint_t *h)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int count;
+	unsigned int count = 0;
+	listint_t *temp_node = head;
 
-	if (h == NULL)
-		return (0);
-	for (count = 0; h != NULL; count++)
-		h = h->next;
-	return (count);
+	while (temp_node && count < index)
+	{
+		temp_node = temp_node->next;
+		count++;
+	}
+	return (temp_node);
 }
