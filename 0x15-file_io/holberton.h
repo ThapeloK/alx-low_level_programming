@@ -1,19 +1,12 @@
 #ifndef HOLBERTON
 #define HOLBERTON
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
-
-int _putchar(char c);
+#include <fcntl.h>
+int append_text_to_file(const char *filename, char *text_content);
 ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
-int append_text_to_file(const char *filename, char *text_content);
-
 int printClass(void *ehdr);
 void error(char *errmsg, int exitcode);
 int _strlen(char *s);
@@ -28,5 +21,4 @@ int getHeader(char *argv[]);
 void checkHeader(void *header);
 void bigType(void *header);
 void bigEntry(void *header, int arch);
-
 #endif
